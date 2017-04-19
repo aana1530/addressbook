@@ -28,7 +28,7 @@ node {
    stage('SonarQube analysis') {
     withSonarQubeEnv('SONAR_HOME') {
       // requires SonarQube Scanner for Maven 3.2+
-       sh '${mvnHome} org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+       sh "'${mvnHome}' org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"
     }
   }
 }
