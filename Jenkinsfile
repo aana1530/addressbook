@@ -22,7 +22,6 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
 
    }
-   //stage('Publish') {
-     //nexusPublisher nexusInstanceId:'NEXUS1', nexusRepositoryId: 'QA_Release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'addressbook_main/target/addressbook.war']], mavenCoordinate: [artifactId: 'addressbook_main', groupId: 'com.edurekademo.tutorial', packaging: 'war', version: '2.3.0']]]
-   //}
-}
+   stage('Publish') {
+     nexusPublisher nexusInstanceId:'NEXUS1', nexusRepositoryId: 'release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'addressbook_main/target/addressbook.war']], mavenCoordinate: [artifactId: 'addressbook_main', groupId: 'com.edurekademo.tutorial', packaging: 'war', version: '2.3.0']]]
+      
